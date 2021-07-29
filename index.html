@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>IPO result NEPSE by SMTM capital</title>
+</head>
+
+<body>
+    <div class="l-form">
+       <form id="myForm" class="form" >
+        <div class="form__div">
+            <img src="./systemxlogo.png" height="30px" width="100px">
+        </div>
+            <h1 class="form__title">Check Share Result</h1>
+            <div class="form__div">
+                <input type="text" name="companyName" class="form__input" id="companyName" placeholder=" " value="ABC">
+                <label for="" class="form__label">Company Name</label>
+            </div>
+
+            <div class="form__div">
+                <input type="number" name="boidField" id="boid" class="form__input" placeholder=" " required minlength="16"
+                    maxlength="16">
+                <label for="" class="form__label">16-digit BOID</label>
+              <div id="error"></div>
+
+            </div>
+
+            <input type="submit" class="form__button" value="View Result">
+            <div>
+               <div class="result__div" id="result"></div>
+            </div>
+        </form>
+    </div>
+    <script src="./script.js"> </script>
+</body>
+
+</html>
