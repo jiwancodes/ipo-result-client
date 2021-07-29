@@ -1,3 +1,8 @@
+/**
+ * @Created 28/07/2021 - 22:56 PM
+ * @Project ipo-result-client
+ * @Author Jiwan Sapkota - sapkotazeewan13@gmail.com
+ */
 const myform = document.getElementById("myForm");
 const wrapper = document.querySelector('.l-form');
 form = wrapper.querySelectorAll('.form');
@@ -53,7 +58,11 @@ async function postData(e) {
         // }
     }
 }
-
+document.querySelector('#boid').addEventListener('keypress', function (e) {
+    if (e.key === 'Enter') {
+        postData();
+    }
+});
 document.addEventListener('DOMContentLoaded', function () {
     submitInput.addEventListener('click', postData, false)
 }, false);

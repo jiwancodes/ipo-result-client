@@ -1,3 +1,7 @@
+/*===== @Created 28/07/2021 - 22:56 PM =====*/
+/*===== @Project ipo-result-client =====*/
+/*===== @Author Jiwan Sapkota - sapkotazeewan13@gmail.com =====*/
+
 /*===== GOOGLE FONTS =====*/
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
 
@@ -63,7 +67,7 @@ h1{
   border: 1px solid var(--border-color);
   border-radius: .5rem;
   outline: none;
-  padding: 1rem;
+  padding: 0.75rem;
   background: none;
   z-index: 1;
 }
