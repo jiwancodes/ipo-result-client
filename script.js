@@ -3,34 +3,20 @@
  * @Project ipo-result-client
  * @Author Jiwan Sapkota - sapkotazeewan13@gmail.com
  */
-const myform = document.getElementById("myForm");
+// const myform = document.getElementById("myForm");
 const wrapper = document.querySelector('.l-form');
 form = wrapper.querySelectorAll('.form');
 submitInput = form[0].querySelector('input[type="submit"]');
-
+const btn = document.getElementById("form__btn");
 
 async function postData(e) {
     e.preventDefault();
     const result = document.getElementById("result");
-    const error = document.getElementById("error");
     const boid = document.querySelector('#boid').value;
     const company = document.querySelector('#companyName').value;
-    error.innerHTML = '';
-    result.innerHTML = '';
+    btn.disabled = true;
     if(boid.length!=16){
-        error.style["position"] = "relative";
-        error.style["top"] = "50px";
-        error.style["margin"] = "auto";
-        error.style["width"] = "200px";
-        error.style["text-align"] = "center";
-        error.style["font-size"] = "9.5px";
-        error.style["box-sizing"] = "borderbox";
-        error.style["color"] = "#f10000";
-        error.innerHTML = 'BOID should be of exactly 16 digits';
         return
-    }
-    else{
-        error.innerHTML = '';
     }
     const reqBody = {
         boid: boid,
@@ -47,15 +33,11 @@ async function postData(e) {
         result.style["padding-top"] = "2rem";
         if (request.status == 200) {
             result.style.color="green"
-            console.log(JSON.parse(request.response));
         }
         else{
             result.style.color="red";
         }
         result.innerHTML = responseBody.msg;
-        // else{
-            console.log(request.status);
-        // }
     }
 }
 document.querySelector('#boid').addEventListener('keypress', function (e) {
@@ -63,6 +45,25 @@ document.querySelector('#boid').addEventListener('keypress', function (e) {
         postData();
     }
 });
+document.querySelector('#boid').addEventListener('input', function () {
+    btn.disabled = false;
+    result.innerHTML = '';
+    if(this.value.length==16){
+        error.innerHTML = '';
+    }
+    else{
+        error.style["position"] = "relative";
+        error.style["top"] = "-10px";
+        error.style["margin"] = "auto";
+        error.style["width"] = "100%";
+        error.style["text-align"] = "center";
+        error.style["font-size"] = "0.95rem";
+        error.style["box-sizing"] = "borderbox";
+        error.style["color"] = "#f10000";
+        error.innerHTML = 'BOID should be of exactly 16 digits';
+    }
+});
+
 document.addEventListener('DOMContentLoaded', function () {
     submitInput.addEventListener('click', postData, false)
 }, false);

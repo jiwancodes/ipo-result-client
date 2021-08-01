@@ -10,8 +10,8 @@
   --first-color: #1A73E8;
   --input-color: #80868B;
   --border-color: #515E63;
-  --body-theme: #F1ECC3;
-  --pink-theme: #C9D8B6;
+  --body-theme: #dde7cd;
+  --card-theme: #C9D8B6;
 
   /*===== Font sizes =====*/
   --body-font: 'Roboto', sans-serif;
@@ -46,7 +46,7 @@ h1{
   padding: 4rem 2rem;
   border-radius: 1rem;
   box-shadow: 0 10px 25px rgba(92,99,105,.2);
-  background-color:var(--pink-theme);
+  background-color:var(--card-theme);
 }
 .form__title{
   font-weight: 400;
@@ -76,7 +76,7 @@ h1{
   left: 1rem;
   top: 1rem;
   padding: 0 .25rem;
-  background-color:var(--pink-theme);
+  background-color:var(--card-theme);
   color: var(--input-color);
   font-size: var(--normal-font-size);
   transition: .3s;
