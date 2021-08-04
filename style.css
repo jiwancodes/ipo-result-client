@@ -1,120 +1,144 @@
-/*===== @Created 28/07/2021 - 22:56 PM =====*/
-/*===== @Project ipo-result-client =====*/
-/*===== @Author Jiwan Sapkota - sapkotazeewan13@gmail.com =====*/
-
 /*===== GOOGLE FONTS =====*/
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
+/* @import url("https://fonts.googleapis.com/css2? family=Poppins:wght@600&display=swap"); */
 
-:root{
+:root {
   /*===== Colors =====*/
-  --first-color: #1A73E8;
-  --input-color: #80868B;
-  --border-color: #515E63;
-  --body-theme: #dde7cd;
-  --card-theme: #C9D8B6;
+  --divider-theme: #ed1c24;
+  --button-color: #1a73e8;
+  --input-color: rgb(242, 242, 242);
+  --border-color: #515e63;
+  --font-color: #000000d9;
 
   /*===== Font sizes =====*/
-  --body-font: 'Roboto', sans-serif;
+  --body-font: "Poppins", sans-serif;
   --normal-font-size: 1rem;
-  --small-font-size: .75rem;
 }
-  
+
 /*===== BASE =====*/
-*,::before,::after{
+*,
+::before,
+::after {
   box-sizing: border-box;
 }
-body{
+body {
   margin: 0;
-  padding: 0;
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
 }
-h1{
-  margin: 0;
-}
-
-/*===== FORM =====*/
-.l-form{
+.share__allotment {
+  padding: 5px 3.5%;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
   height: 100vh;
-  background-color:var(--body-theme);
+  justify-content: start;
 }
-.form{
-  width: 360px;
-  padding: 4rem 2rem;
-  border-radius: 1rem;
-  box-shadow: 0 10px 25px rgba(92,99,105,.2);
-  background-color:var(--card-theme);
+.image__wrapper {
+  margin: 5px 0px;
 }
-.form__title{
+.logo {
+  height: 70px;
+  width: 140px;
+}
+.title__wrapper {
+  margin-top:30px;
+  display: flex;
+  flex-direction: column;
+}
+.bold__title {
+  width: max-content;
+  border-bottom: 4px solid var(--divider-theme);
+  font-size: 24px;
+  font-weight: 700;
+  padding-right: 55px;
+}
+.small__title {
+  margin: 10px 0px 20px 0px;
+  font-size: 16px;
   font-weight: 400;
-  margin-bottom: 3rem;
 }
-.form__div{
-  position: relative;
-  height: 48px;
-  margin-bottom: 1.5rem;
+.body_wrapper{
+  margin-top: 10px;
 }
-.form__input{
-  position: absolute;
-  top: 0;
-  left: 0;
+.form {
   width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: flex-start;
+}
+.form__label {
+  font-size: 16px;
+  margin: 0px 40px 0px 0px;
+  padding-top: 5px;
+  font-weight: 700;
+  line-height: 26px;
+}
+.form__div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   height: 100%;
-  font-size: var(--normal-font-size);
+  width: 100%;
+  min-width: 100px;
+  max-width: 350px;
+  margin: 0px 40px 0px 0px;
+  padding: 0px;
+}
+.form__input {
+  width: 100%;
+  height: 40px;
+  line-height: 30px;
+  font-size:1rem;
+  font-family: var(--body-font);
   border: 1px solid var(--border-color);
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   outline: none;
-  padding: 0.75rem;
-  background: none;
+  padding: 3px;
+  background: var(--input-color);
   z-index: 1;
 }
-.form__label{
-  position: absolute;
-  left: 1rem;
-  top: 1rem;
-  padding: 0 .25rem;
-  background-color:var(--card-theme);
-  color: var(--input-color);
-  font-size: var(--normal-font-size);
-  transition: .3s;
+.error{
+  width: 100%;
+  text-align: center;
+  margin-top: 2px;
+  color: #ed1c24;
+
 }
-.form__button{
+.form__button {
   display: block;
-  margin-left: auto;
-  padding: .75rem 2rem;
+  padding: 0.45rem 2rem;
   outline: none;
   border: none;
-  background-color: var(--first-color);
+  background-color: var(--button-color);
   color: #fff;
   font-size: var(--normal-font-size);
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   cursor: pointer;
-  transition: .3s;
+  transition: 0.3s;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 26px;
+  letter-spacing: 0em;
 }
-.form__button:hover{
-  box-shadow: 0 10px 36px rgba(0,0,0,.15);
+.result__div{
+  font-weight: bold;
+    font-size: 24px;
+    line-height: 36px;
 }
-
-/*Input focus move up label*/
-.form__input:focus + .form__label{
-  top: -.5rem;
-  left: .8rem;
-  color: var(--first-color);
-  font-size: var(--small-font-size);
-  font-weight: 500;
-  z-index: 10;
+.footer{
+  position: absolute;
+  top:80vh;
 }
-
-/*Input focus sticky top label*/
-.form__input:not(:placeholder-shown).form__input:not(:focus)+ .form__label{
-  top: -.5rem;
-  left: .8rem;
-  font-size: var(--small-font-size);
-  font-weight: 500;
-  z-index: 10;
+.powered_by{
+  width: max-content;
+  font-size: 24px;
+  font-weight: 700;
+  
+}
+.logo__big{
+  width: 150px;
+  height: 40px;
 }
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -126,18 +150,30 @@ input::-webkit-inner-spin-button {
 input[type=number] {
   -moz-appearance: textfield;
 }
-
-/*Input focus*/
-.form__input:focus{
-  border: 1.5px solid var(--first-color);
-}
-.result{
-  margin-top: 10px;
-}
-@media screen and (max-width: 500px){
-  .form{
-    width: 100%;
-    margin-left:20px;
-    margin-right: 20px; 
-  }  
+@media screen and (max-width: 800px) {  
+  .share__allotment {
+    padding: 5px 5%;
+    /* height: auto; */
   }
+  .logo {
+    height: 50px;
+    width: 100px;
+  }
+
+  .form {
+    margin:0px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .form__label{
+    margin:0px 0px 5px 0px;
+  }
+  .form__div{
+    margin:0px 0px 4vh 0px; 
+   }
+   .footer{
+    position: relative;
+    margin-top: 4vh;
+    top: 10px;
+   }
+}

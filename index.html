@@ -3,51 +3,73 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./style.css" />
+    <!-- <link rel="stylesheet" href="./style.css" /> -->
+    <link rel="stylesheet" href="./style.css"/>
     <title>IPO Result -- SMTM capital</title>
   </head>
+
   <body>
-    <div class="l-form">
-      <form id="myForm" class="form">
-        <div class="form__div">
-          <img src="./systemxlogo.png" height="30px" width="100px" />
+    <div class="share__allotment">
+      <div>
+        <div class="image__wrapper">
+          <a href="https://www.prabhucapital.com/" target="_blank"
+            ><img class="logo" src="./prabhu-logo.png" alt="logo prabhu capital"
+          /></a>
         </div>
-        <h1 class="form__title">Check Share Result</h1>
-        <div class="form__div">
-          <select
-            name="companyName"
-            class="form__input"
-            id="companyName"
-            placeholder=" "
-            value="ABC"
-          >
-            <option>ABC</option>
-            <option>XYZ</option>
-            <option>CDE</option>
-            <option>FAQ</option>
-          </select>
-          <label for="" class="form__label">Company Name</label>
+        <div class="title__wrapper">
+          <div class="bold__title">Share Allotment</div>
+          <div class="small__title">Check Share Allotment</div>
         </div>
-
-        <div class="form__div">
+      </div>
+      <div class="body_wrapper">
+        <form id="myForm" class="form">
+          <label for="" class="form__label">Company</label>
+          <div class="form__div">
+            <select
+              name="companyName"
+              class="form__input"
+              id="companyName"
+              placeholder=""
+              required
+              value="ABC"
+            >
+              <option value="" disabled selected hidden>Choose Company</option>
+              <option value="Union Life Insurance">Union Life Insurance</option>
+              <option value="Sanima Life Insurance">Sanima Life Insurance</option>
+            </select>
+            <div id="error_company" class="error"></div>
+          </div>
+          <label for="" class="form__label">BOID</label>
+          <div class="form__div">
+            <input
+              type="number"
+              name="boidField"
+              id="boid"
+              class="form__input"
+              placeholder="xxxxxxxxxxxxxxxx"
+              required
+              maxlength="16"
+            />
+            <div id="error_boid" class="error"></div>
+          </div>
           <input
-            type="number"
-            name="boidField"
-            id="boid"
-            class="form__input"
-            placeholder=" "
-            required
-            maxlength="16"
+            type="submit"
+            class="form__button"
+            id="form__btn"
+            value="Check"
           />
-          <label for="" class="form__label">16-digit BOID</label>
-        </div>
-        <div id="error"></div>
-
-        <input type="submit" class="form__button" id="form__btn" value="View Result" />
+        </form>
         <div>
           <div class="result__div" id="result"></div>
         </div>
-      </form>
+      </div>
+      <div class="footer">
+        <div class="powered_by">Powered By</div>
+        <div class="image__wrapper">
+          <a href="https://www.systemxlite.com/" target="_blank">
+            <img class="logo__big" src="./systemxlogo.png" alt="systemxlite logo"/></a>
+        </div>
+      </div>
     </div>
     <script src="./script.js"></script>
   </body>
