@@ -16,24 +16,21 @@ const companyError = document.querySelector('#error_company');
     const boid = document.querySelector('#boid');
     const company = document.getElementById("companyName");
     btn.disabled = true;
-    if (boid.value.length==0 && company.value=="") {
+    if (boid.value.length!=16 && company.value=="") {
         boid.style["border-color"]="#ed1c24";
         company.style["border-color"]="#ed1c24";
-        error.innerHTML = "Please enter a valid BOID number.";
+        error.innerHTML = "Please enter your 16 digit BOID number.";
         companyError.innerHTML = "You need to select a company.";
         return
     }
-    if (boid.value.length==0) {
+    if (boid.value.length!=16) {
         boid.style["border-color"]="#ed1c24";
-        error.innerHTML = "Please enter a valid BOID number.";
+        error.innerHTML = "Please enter your 16 digit BOID number.";
         return
     }
     if (company.value=="") {
         company.style["border-color"]="#ed1c24";
         companyError.innerHTML = "You need to select a company.";
-        return
-    }
-    if(boid.value.length!==16){
         return
     }
     btn.value='Checking...'
@@ -83,17 +80,13 @@ document.querySelector('#boid').addEventListener('input', function () {
         this.value = this.value.slice(0,16); 
     btn.disabled = false;
     result.innerHTML = '';
-    if (this.value.length==0) {
+    if(this.value.length!=16){
         this.style["border-color"]="#ed1c24";
-        error.innerHTML = "Please enter a valid BOID number.";
+        error.innerHTML = 'Please enter your 16 digit BOID number.';
     }
     if (this.value.length==16) {
         this.style["border-color"]="#515e63";
         error.innerHTML = '';
-    }
-    if(this.value.length!=0&&this.value.length!=16){
-        this.style["border-color"]="#ed1c24";
-        error.innerHTML = 'Strictly 16 digit boid is required';
     }
 });
 
